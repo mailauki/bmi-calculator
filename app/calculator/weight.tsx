@@ -27,7 +27,7 @@ export default function Weight() {
           </RoundButton>
         </div>}
       label="Weight">
-      <p className="text-7xl font-extralight">{count}</p>
+      <p className="text-6xl font-extralight">{count}</p>
     </Box>
   )
 }
