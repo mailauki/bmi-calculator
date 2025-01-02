@@ -1,6 +1,6 @@
 export default function BMI({number}: {number: number}) {
   return (
-    <div className="p-4 w-fit rounded-full shadow-[20px_20px_60px_#c4c3c2,-20px_-20px_60px_#ffffff] dark:shadow-[20px_20px_60px_#231f1f,-20px_-20px_60px_#2f2b29]">
+    <div className="p-4 w-fit h-fit rounded-full shadow-[20px_20px_60px_#c4c3c2,-20px_-20px_60px_#ffffff] dark:shadow-[20px_20px_60px_#231f1f,-20px_-20px_60px_#2f2b29]">
       <div className="relative size-52">
         <svg className="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
           {/* Background Circle */}

@@ -3,7 +3,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import RoundButton from "@/components/round-button";
 
 import Calculator from "./calculator/page";
-import Results from "./results/page";
+// import Results from "./results/page";
 
 export default function Home() {
   return (
@@ -20,9 +20,9 @@ export default function Home() {
         </div>
       </header>
       <aside />
-      <main className="sm:col-span-2 py-12 flex flex-col gap-4">
-        {/* <Calculator /> */}
-        <Results />
+      <main className="sm:col-span-2 py-12 flex flex-col gap-6">
+        <Calculator />
+        {/* <Results /> */}
       </main>
       <aside />
       <footer className="sm:col-start-1 sm:col-end-5 col-start-auto col-end-auto" />
