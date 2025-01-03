@@ -37,11 +37,11 @@ export default function Height({
       actions={<Counter add={add} minus={minus} />}
       label="Height"
     >
-      <p className="my-4 font-extralight">
-        <span className="text-6xl">{feet}</span>
+      <p className="my-2 font-thin">
+        <span className="text-5xl">{feet}</span>
         <span className="text-xs text-stone-500 dark:text-stone-600">ft</span>
         {" "}
-        <span className="text-6xl">{inches}</span>
+        <span className="text-5xl">{inches}</span>
         <span className="text-xs text-stone-500 dark:text-stone-600">in</span>
       </p>
       {/* <p className="my-6 font-extralight"><span className="text-6xl">{cm}</span><span className="text-xs text-stone-500 dark:text-stone-600">cm</span></p> */}
