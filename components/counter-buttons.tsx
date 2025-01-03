@@ -3,9 +3,14 @@ import { MouseEventHandler } from "react";
 
 import RoundButton from "@/components/round-button";
 
-export default function Counter({add, minus}: {add: MouseEventHandler<HTMLButtonElement>, minus: MouseEventHandler<HTMLButtonElement>}) {
+export default function Counter({
+  add, minus,
+}: {
+	add: MouseEventHandler<HTMLButtonElement>,
+	minus: MouseEventHandler<HTMLButtonElement>
+}) {
   return (
-    <div className="flex justify-center gap-12 w-full">
+    <div className="mx-2 w-full flex justify-evenly items-center gap-6">
       <RoundButton onClick={add}>
         <PlusIcon className="size-5 text-current" />
       </RoundButton>

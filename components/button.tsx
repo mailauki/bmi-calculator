@@ -4,13 +4,14 @@ export default function RoundButton({
   children,
   onClick,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }> & {
 	onClick?: MouseEventHandler<HTMLButtonElement>
 }) {
   return (
     <button
-      className="p-4 w-fit h-fit rounded-full 
+      className="px-6 py-3 rounded-2xl 
+			w-full h-fit 
 			border border-stone-300/20 dark:border-stone-700/20 
 			hover:bg-stone-300/50 dark:hover:bg-stone-700/50 
 			shadow-[10px_10px_20px_#c4c3c2,-10px_-10px_20px_#ffffff] 
@@ -23,7 +24,9 @@ export default function RoundButton({
 			transition-all ease-in-out duration-300"
       onClick={onClick}
     >
-      {children}
+      <span className="font-semibold text-blue-500 dark:text-blue-400">
+        {children}
+      </span>
     </button>
   )
 }

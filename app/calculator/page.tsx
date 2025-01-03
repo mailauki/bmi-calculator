@@ -33,12 +33,12 @@ export default function Calculator() {
   return (
     <>
       <RadioButtons />
-      <div className="flex flex-row justify-center items-center gap-6">
+      <div className="grid grid-cols-2 gap-6">
         <Height add={addHeight} height={height} minus={minusHeight} />
         <Weight add={addWeight} minus={minusWeight} weight={weight} />
-      </div>
-      <div className="flex flex-row justify-center items-center gap-6">
-        <BMI number={rounded} />
+        <div className="col-span-2 flex justify-center">
+          <BMI number={rounded} />
+        </div>
       </div>
     </>
   )

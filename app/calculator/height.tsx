@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react";
 
-import Box from "@/components/box";
 import Counter from "@/components/counter-buttons";
+import Card from "@/components/card";
 
 // export default function Height({height}: {height: number}) {
 //   return (
@@ -21,13 +21,30 @@ import Counter from "@/components/counter-buttons";
 //     </>
 //   )
 // }
-export default function Height({height, add, minus}: {height: number, add: MouseEventHandler<HTMLButtonElement>, minus: MouseEventHandler<HTMLButtonElement>}) {
+export default function Height({
+  height, add, minus,
+}: {
+	height: number,
+	add: MouseEventHandler<HTMLButtonElement>,
+	minus: MouseEventHandler<HTMLButtonElement>
+}) {
+  const feet = Math.floor(height/12)
+  const inches = height-(feet*12)
+  // const cm = Math.round((height*2.54)*10)/10 // cm*0.394
+
   return (
-    <Box
+    <Card
       actions={<Counter add={add} minus={minus} />}
       label="Height"
     >
-      <p className="text-6xl font-extralight">{height}</p>
-    </Box>
+      <p className="my-4 font-extralight">
+        <span className="text-6xl">{feet}</span>
+        <span className="text-xs text-stone-500 dark:text-stone-600">ft</span>
+        {" "}
+        <span className="text-6xl">{inches}</span>
+        <span className="text-xs text-stone-500 dark:text-stone-600">in</span>
+      </p>
+      {/* <p className="my-6 font-extralight"><span className="text-6xl">{cm}</span><span className="text-xs text-stone-500 dark:text-stone-600">cm</span></p> */}
+    </Card>
   )
 }
