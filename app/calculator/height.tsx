@@ -37,7 +37,7 @@ export default function Height({
       actions={<Counter add={add} minus={minus} />}
       label="Height"
     >
-      <p className="my-2 font-thin">
+      <p className="font-thin">
         <span className="text-5xl">{feet}</span>
         <span className="text-xs text-stone-500 dark:text-stone-600">ft</span>
         {" "}

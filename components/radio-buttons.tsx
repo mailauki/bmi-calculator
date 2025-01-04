@@ -12,16 +12,15 @@ export default function RadioButtons() {
 				w-full h-fit text-center 
 				border border-stone-300/20 dark:border-stone-700/20 
 				hover:bg-stone-300/50 dark:hover:bg-stone-700/50 
-				shadow-[10px_10px_20px_#c4c3c2,-10px_-10px_20px_#ffffff] 
-				dark:shadow-[10px_10px_20px_#231f1f,-10px_-10px_20px_#2f2b29] 
-				focus:shadow-[inset_8px_8px_20px_#c4c3c2,inset_-8px_-8px_20px_#ffffff] 
-				dark:focus:shadow-[inset_8px_8px_20px_#231f1f,inset_-8px_-8px_20px_#2f2b29] 
-				active:shadow-[inset_8px_8px_20px_#c4c3c2,inset_-8px_-8px_20px_#ffffff] 
-				dark:active:shadow-[inset_8px_8px_20px_#231f1f,inset_-8px_-8px_20px_#2f2b29] 
-				has-[:checked]:shadow-[inset_8px_8px_20px_#c4c3c2,inset_-8px_-8px_20px_#ffffff] 
-				dark:has-[:checked]:shadow-[inset_8px_8px_20px_#231f1f,inset_-8px_-8px_20px_#2f2b29] 
-				has-[:checked]:ring-2 
-				ring-inset ring-indigo-300 
+				shadow-[6px_6px_12px_#c4c3c2,-6px_-6px_12px_#ffffff] 
+				dark:shadow-[6px_6px_12px_#231f1f,-6px_-6px_12px_#2f2b29] 
+				focus:shadow-[inset_4px_4px_12px_#c4c3c2,inset_-4px_4px_12px_#ffffff] 
+				dark:focus:shadow-[inset_8px_8px_20px_#231f1f,inset_-4px_-4px_12px_#2f2b29] 
+				active:shadow-[inset_4px_4px_12px_#c4c3c2,inset_-4px_-4px_12px_#ffffff] 
+				dark:active:shadow-[inset_4px_4px_12px_#231f1f,inset_-4px_-4px_12px_#2f2b29] 
+				has-[:checked]:shadow-[inset_4px_4px_12px_#c4c3c2,inset_-4px_-4px_12px_#ffffff] 
+				dark:has-[:checked]:shadow-[inset_4px_4px_12px_#231f1f,inset_-4px_-4px_12px_#2f2b29] 
+				has-[:checked]:text-blue-500 dark:has-[:checked]:text-blue-400 
 				cursor-pointer 
 				transition-all ease-in-out duration-300"
         htmlFor={`button-${index}`}

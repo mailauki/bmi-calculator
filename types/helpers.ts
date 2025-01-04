@@ -1,6 +1,6 @@
 type CounterAction = "add" | "subtract"
 
-type CounterType = "height" | "weight"
+type CounterType = "height" | "weight" | "age"
 
 export interface CounterProps {
 	number: number,

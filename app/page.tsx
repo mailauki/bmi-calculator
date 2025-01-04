@@ -6,13 +6,14 @@ import RoundButton from "@/components/round-button";
 import Button from "@/components/button";
 import { CounterProps } from "@/types/helpers";
 
-import Calculator from "./calculator/page";
-import Results from "./results/page";
+import Calculator from "./calculator/calculator";
+import Results from "./results/results";
 
 export default function Home() {
   const [isCalculated, setIsCalculated] = useState(false)
 
   const [weight, setWeight] = useState(200)
+  const [age, setAge] = useState(20)
   const [height, setHeight] = useState((5*12)+8)
 
   const bmi = (weight/(height*height))*703
@@ -26,6 +27,10 @@ export default function Home() {
     if (type === "height") {
       if (action === "add" && number >= 0) setHeight(number+1)
       if (action === "subtract" && number > 0) setHeight(number-1)
+    }
+    if (type === "age") {
+      if (action === "add" && number >= 0) setAge(number+1)
+      if (action === "subtract" && number > 0) setAge(number-1)
     }
   }
 
@@ -46,7 +51,7 @@ export default function Home() {
         {isCalculated ? (
           <Results bmi={rounded} />
         ) : (
-          <Calculator handleCount={handleCount} height={height} weight={weight} />
+          <Calculator age={age} handleCount={handleCount} height={height} weight={weight} />
         )}
       </main>
       <footer className="mt-4 mb-40 flex-none"><Button onClick={() => setIsCalculated(true)}>Let's Begin</Button></footer>
