@@ -1,6 +1,8 @@
-type CounterAction = "add" | "subtract"
+export type CounterAction = "add" | "subtract"
 
-type CounterType = "height" | "weight" | "age"
+export type CounterType = "height" | "weight" | "age"
+
+export type UnitSystem = "US/Imperial" | "Metric"
 
 export type PageType = "calculator" | "results" | "details" | "info"
 

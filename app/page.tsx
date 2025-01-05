@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import RoundButton from "@/components/round-button";
 import Button from "@/components/button";
-import { Category, CounterProps, PageType } from "@/types/helpers";
+import { Category, CounterProps, PageType, UnitSystem } from "@/types/helpers";
 
 import Calculator from "./calculator/calculator";
 import Results from "./results/results";
@@ -12,6 +12,12 @@ import Details from "./details/details";
 
 export default function Home() {
   const [page, setPage] = useState<PageType>("calculator")
+
+  const [unit, setUnit] = useState<UnitSystem>("US/Imperial")
+
+  function handleUnitChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setUnit((event.target as HTMLInputElement).value as UnitSystem)
+  }
 
   const [weight, setWeight] = useState(200)
   const [age, setAge] = useState(20)
@@ -91,7 +97,7 @@ export default function Home() {
           case "results":
             return <Results bmi={rounded} category={category} />;
           case "calculator":
-            return <Calculator age={age} handleCount={handleCount} height={height} weight={weight} />;
+            return <Calculator age={age} handleCount={handleCount} handleUnitChange={handleUnitChange} height={height} unit={unit} weight={weight} />;
           case "details":
             return <Details bmi={rounded} category={category} />;
           case "info":

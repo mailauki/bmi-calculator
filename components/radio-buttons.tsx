@@ -1,10 +1,11 @@
-"use client"
+import { UnitSystem } from "@/types/helpers"
 
-import { useState } from "react"
-
-export default function RadioButtons() {
-  const [selected, setSelected] = useState("button-0")
-
+export default function RadioButtons({ 
+  unit, handleUnitChange 
+}: { 
+	unit: UnitSystem, 
+	handleUnitChange: (event: React.ChangeEvent<HTMLInputElement>) => void 
+}) {
   function Radio({ label, index }: { label: string, index :number }) {
     return (
       <label
@@ -27,13 +28,13 @@ export default function RadioButtons() {
       >
         {label}
         <input
-          checked={selected === `button-${index}`}
+          checked={unit === label} 
           className="hidden"
           id={`button-${index}`}
           name={`button-${index}`}
           type="radio"
-          value={`button-${index}`}
-          onChange={() => setSelected(`button-${index}`)}
+          value={label}
+          onChange={handleUnitChange}
         />
       </label>
     )
@@ -41,7 +42,7 @@ export default function RadioButtons() {
 
   return (
     <div className="flex justify-between items-center gap-6">
-      {["US/Imperial", "Metric"].map((label, index) => <Radio key={index} index={index} label={label} />)}
+      {["US/Imperial", "Metric"].map((label, index) => <Radio key={index}  index={index} label={label} />)}
     </div>
   )
 }

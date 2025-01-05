@@ -2,6 +2,7 @@ import { MouseEventHandler } from "react";
 
 import Counter from "@/components/counter-buttons";
 import Card from "@/components/card";
+import { UnitSystem } from "@/types/helpers";
 
 // export default function Height({height}: {height: number}) {
 //   return (
@@ -22,29 +23,37 @@ import Card from "@/components/card";
 //   )
 // }
 export default function Height({
-  height, add, minus,
+  height, add, minus, unit,
 }: {
 	height: number,
 	add: MouseEventHandler<HTMLButtonElement>,
-	minus: MouseEventHandler<HTMLButtonElement>
+	minus: MouseEventHandler<HTMLButtonElement>,
+	unit: UnitSystem,
 }) {
   const feet = Math.floor(height/12)
   const inches = height-(feet*12)
-  // const cm = Math.round((height*2.54)*10)/10 // cm*0.394
+  const cm = Math.round((height*2.54)*10)/10 // cm*0.394
 
   return (
     <Card
       actions={<Counter add={add} minus={minus} />}
       label="Height"
     >
-      <p className="font-thin">
-        <span className="text-5xl">{feet}</span>
-        <span className="text-xs text-stone-500 dark:text-stone-600">ft</span>
-        {" "}
-        <span className="text-5xl">{inches}</span>
-        <span className="text-xs text-stone-500 dark:text-stone-600">in</span>
-      </p>
-      {/* <p className="my-6 font-extralight"><span className="text-6xl">{cm}</span><span className="text-xs text-stone-500 dark:text-stone-600">cm</span></p> */}
+      {unit === "US/Imperial" && (
+        <p className="font-thin">
+          <span className="text-5xl">{feet}</span>
+          <span className="text-xs text-stone-500 dark:text-stone-600">ft</span>
+          {" "}
+          <span className="text-5xl">{inches}</span>
+          <span className="text-xs text-stone-500 dark:text-stone-600">in</span>
+        </p>
+      )}
+      {unit === "Metric" && (
+        <p className="font-thin">
+          <span className="text-5xl">{cm}</span>
+          <span className="text-xs text-stone-500 dark:text-stone-600">cm</span>
+        </p>
+      )}
     </Card>
   )
 }
